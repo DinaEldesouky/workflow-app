@@ -25,7 +25,6 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-              
             ],
             "styles": [
               "src/styles.css"
@@ -114,10 +113,16 @@
             ],
             "styles": [
               "src/styles.css"
-             
             ],
-            "scripts": [
-            ]
+            "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/my-app",
+            "netlifyToken": "vh-gfwdA8ZlBDscQGPDIWgRGEt6MYH_4p3aPWJkmcD4",
+            "siteId": "c1779534-578a-447c-bbe4-4e0e6ed8f3a7"
           }
         }
       }
