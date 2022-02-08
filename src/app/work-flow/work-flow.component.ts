@@ -49,7 +49,6 @@ export class WorkFlowComponent implements OnInit {
   addNewRow() {
     this.isSaved = false;
     this.isEdit=false;
-
     console.log('here');
     this.isOpened = !this.isOpened;
     if (!this.checkbox) {

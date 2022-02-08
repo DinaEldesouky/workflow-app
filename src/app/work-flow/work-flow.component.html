@@ -28,14 +28,17 @@
       title="Add Breakdown"
       data-original-title="Add Breakdown"
     >
-      <span
+    <span *ngIf="!isOpened" class="fas fa-plus-circle"></span>
+    <span *ngIf="isOpened" class="fas fa-minus-circle"></span>
+
+      <!-- <span
         *ngIf="!isSaved"
         [ngClass]="{
           'fas fa-plus-circle': !isOpened,
           'fas fa-minus-circle': isOpened
         }"
-      ></span
-    ></a>
+      ></span -->
+    </a>
     <a
       href="#"
       class="infoview-btn"
@@ -76,10 +79,11 @@
                 *ngFor="let w of workFlow"
                 [attr.id]="w.approvStpWorkflowTypesPK.workflowTypeId"
               >
-                <td class="dnone">21</td>
+                <!-- <td class="dnone">21</td> -->
                 <td class="row-inline-editable">
                   <span >{{ w.workflowTypeCode }}</span
-                  ><input
+                  >
+                  <input
                     
                     class="form-control"
                     type="text"
@@ -89,7 +93,8 @@
                 </td>
                 <td class="row-inline-editable">
                   <span >{{ w.latinName }}</span
-                  ><input
+                  >
+                  <input
                     class="form-control"
                     type="text"
                     value="{{ w.latinName }}"
@@ -98,8 +103,8 @@
                 </td>
                 <td class="row-inline-editable">
                   <span >{{ w.arabicName }}</span
-                  ><input
-                    
+                  >
+                  <input
                     class="form-control"
                     type="text"
                     value="{{ w.arabicName }}"
@@ -129,7 +134,7 @@
               <tr
                 class="new-row active"
                 role="row"
-                *ngIf="isOpened && !isSaved || isEdit"
+                *ngIf="isOpened && !isSaved && !isEdit"
               >
                 <!-- <td class="dnone">21</td> -->
                 <td>
