@@ -1,0 +1,195 @@
+<div class="pageTitle">
+  <h2>Work Flows</h2>
+  <div class="actions">
+    <a
+      href="#"
+      class="inactive"
+      data-toggle="tooltip"
+      data-placement="left"
+      title="Print"
+      data-original-title="Print"
+      ><span class="glyphicon glyphicon-print"></span>
+    </a>
+    <a
+      href="#"
+      class="inactive"
+      (click)="save()"
+      data-toggle="tooltip"
+      data-placement="left"
+      title="Save"
+      data-original-title="Save"
+    >
+      <span class="glyphicon glyphicon-floppy-disk"></span
+    ></a>
+    <a
+      (click)="addNewRow()"
+      data-toggle="tooltip"
+      data-placement="left"
+      title="Add Breakdown"
+      data-original-title="Add Breakdown"
+    >
+      <span
+        *ngIf="!isSaved"
+        [ngClass]="{
+          'fas fa-plus-circle': !isOpened,
+          'fas fa-minus-circle': isOpened
+        }"
+      ></span
+    ></a>
+    <a
+      href="#"
+      class="infoview-btn"
+      data-toggle="tooltip"
+      data-placement="left"
+      title="Info"
+      data-original-title="Info"
+    >
+      <span class="fas fa-info"></span
+    ></a>
+  </div>
+</div>
+<!-- End - Sub-header (Page Tilte) -->
+<div class="pageContent mt-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 mb-10">
+        <div
+          id="setupDetailsTabel"
+          class="table-responsive pre-scrollable mt-10"
+        >
+          <table
+            class="table table-striped table-bordered table-hover table-condensed"
+          >
+            <thead>
+              <tr>
+                <th class="dnone"></th>
+                <th>Code</th>
+                <th>Latin Name</th>
+                <th>Arabic Name</th>
+                <th>Related Tasks</th>
+                <th>Active</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let w of workFlow"
+                [attr.id]="w.approvStpWorkflowTypesPK.workflowTypeId"
+              >
+                <td class="dnone">21</td>
+                <td class="row-inline-editable">
+                  <span >{{ w.workflowTypeCode }}</span
+                  ><input
+                    
+                    class="form-control"
+                    type="text"
+                    value="{{ w.workflowTypeCode }}"
+                    placeholder="0bb"
+                  />
+                </td>
+                <td class="row-inline-editable">
+                  <span >{{ w.latinName }}</span
+                  ><input
+                    class="form-control"
+                    type="text"
+                    value="{{ w.latinName }}"
+                    placeholder="0bb"
+                  />
+                </td>
+                <td class="row-inline-editable">
+                  <span >{{ w.arabicName }}</span
+                  ><input
+                    
+                    class="form-control"
+                    type="text"
+                    value="{{ w.arabicName }}"
+                    placeholder="0bb"
+                  />
+                </td>
+                <td class="details-control center">
+                  <a href="#" class="square-icon show-child"
+                    ><i class="fa fa-ellipsis-h"></i
+                  ></a>
+                </td>
+                <td class="row-inline-editable text-center">
+                  <span class="editable"><i class="fas fa-check"></i></span
+                  ><input type="checkbox" class="" />
+                </td>
+                <td class="center">
+                  <a
+                    class="row-inline-edit glyphicon glyphicon-inline glyphicon-pencil"
+                    (click)="edit(w.approvStpWorkflowTypesPK)"
+                  ></a>
+                  <a (click)="onRemoveRow(w.approvStpWorkflowTypesPK)">
+                    <i class="glyphicon glyphicon-trash"></i
+                  ></a>
+                </td>
+              </tr>
+
+              <tr
+                class="new-row active"
+                role="row"
+                *ngIf="isOpened && !isSaved || isEdit"
+              >
+                <!-- <td class="dnone">21</td> -->
+                <td>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="val1"
+                    value=""
+                  />
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="val2"
+                    value=""
+                  />
+                </td>
+                <td>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="val3"
+                    value=""
+                  />
+                </td>
+                <td class="details-control center">
+                  <a href="#" class="square-icon show-child"
+                    ><i class="fa fa-ellipsis-h"></i
+                  ></a>
+                </td>
+                <td class="row-inline-editable text-center active">
+                  <input
+                    type="checkbox"
+                    class="form-control"
+                    [(ngModel)]="checkbox"
+                  />
+                </td>
+                <td class="action center">
+                  <a
+                    class="glyphicon glyphicon-inline glyphicon-floppy-disk row-inline-add"
+                    href="#"
+                    (click)="save()"
+                  ></a>
+                  <!-- <a
+                 
+                    href="#"
+                    class=" glyphicon-inline glyphicon glyphicon-trash"
+                  ></a> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg-3 info-view dnone">
+        <div class="mt-5 info-section">
+          <h3><i class="fas fa-info-circle"></i> Notes</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

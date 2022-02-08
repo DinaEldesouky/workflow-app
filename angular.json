@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
-          "strict": true
+          "strict": false
         }
       },
       "root": "",
@@ -25,24 +25,43 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+              
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/jquery-3.3.1.min.js",
+              "src/assets/js/jquery-ui.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/jquery.datetimepicker.full.min.js",
+              "src/assets/js/jquery.mask.min.js",
+              "src/assets/js/jquery.dataTables.min.js",
+              "src/assets/js/dataTables.colReorder.min.js",
+              "src/assets/js/select2.min.js",
+              "src/assets/js/moment.min.js",
+              "src/assets/js/datetime-moment.js",
+              "src/assets/js/jquery.fonticonpicker.min.js",
+              "src/assets/js/es.js",
+              "src/assets/jstree/jstree.min.js",
+              "src/assets/js/simplebar.min.js",
+              "src/assets/js/DMSBlue.js",
+              "src/assets/js/owl.carousel.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ],
               "fileReplacements": [
@@ -95,8 +114,10 @@
             ],
             "styles": [
               "src/styles.css"
+             
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         }
       }

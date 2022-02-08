@@ -1,0 +1,136 @@
+<div class="side-menu" style="width: 260px; height: 89.6%" id="sidemenu">
+  <a
+    (click)="OnCollaps()"
+    [ngClass]="IsClosed ? 'glyphicon-chevron-right' : 'glyphicon-chevron-left'"
+    class="collaps-smenu glyphicon"
+  ></a>
+  <div class="clearfix"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mr0">
+        <nav class="navbar navbar-default">
+          <!-- toggle get grouped for better mobile display -->
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1"
+          >
+            <ul class="sidemenu">
+              <li class="has-sub">
+                <a class="s-sub" href="#"
+                  ><i class="fa fa-tachometer-alt"></i> Dashboard</a
+                >
+                <ul class="sub collapse firstsub">
+                  <li>
+                    <a href="Maintenance-Work-Orders.html"
+                      >Maintenance Work Orders</a
+                    >
+                  </li>
+                  <li>
+                    <a href="Technician-Performance.html"
+                      >Technician Performance</a
+                    >
+                  </li>
+                  <li><a href="Technician-hours.html">Technician Hours</a></li>
+                  <li>
+                    <a href="Schedule-Performance.html">Schedule Performance</a>
+                  </li>
+                  <li>
+                    <a href="Staff-Productivity.html">Staff Productivity</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="has-sub">
+                <a class="s-sub opened" href="#"
+                  ><i class="fa fa-cogs"></i> Setup</a
+                >
+                <ul class="sub collapse firstsub" style="display: block">
+                  <li><a href="tasks.html">Tasks</a></li>
+                  <li class="active">
+                    <a href="Grouptasks.html">Group of Tasks</a>
+                  </li>
+                  <li><a href="Breakdown.html">Breakdown</a></li>
+                  <li>
+                    <a href="Corrective-action.html">Corrective Action</a>
+                  </li>
+                  <li><a href="Knowldge-base.html">knowledge Base</a></li>
+                  <li class="">
+                    <a href="Equipment-Maintenance-Tasks.html"
+                      >Equipment Maintenance Tasks</a
+                    >
+                  </li>
+                  <li class="has-sub third-sub">
+                    <a class="s-sub" href="#">Organization Structure</a>
+                    <ul class="sub collapse firstsub">
+                      <li><a href="Work-Center.html">Work Center</a></li>
+                      <li>
+                        <a href="Producation-Line.html">Producation Line</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a href="System-Option.html">System Option</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="has-sub">
+                <a class="s-sub" href="#"
+                  ><i class="fa fa-cogs"></i> Transaction</a
+                >
+                <ul class="sub collapse firstsub">
+                  <li class="has-sub third-sub">
+                    <a class="s-sub" href="#"> Maintenance Requests</a>
+                    <ul class="sub collapse firstsub">
+                      <li><a href="index.html">Maintenance Requests</a></li>
+                      <li><a href="New-Request.html">New Request</a></li>
+                      <li>
+                        <a href="assign-Schedule.html">Assign & Schedule</a>
+                      </li>
+                      <li><a href="In-Progress.html">In Progress</a></li>
+                      <li><a href="Results.html">Results</a></li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a class="no-sub" href="Maintenance-Plan.html">
+                      Maintenance Plan</a
+                    >
+                  </li>
+                  <li class="has-sub third-sub">
+                    <a class="s-sub" href="#">Manage Maintenance Order</a>
+                    <ul class="sub collapse firstsub">
+                      <li>
+                        <a href="Maintenance-Order.html"
+                          >Manage Maintenance Order</a
+                        >
+                      </li>
+                      <li>
+                        <a href="Maintenance-list.html"
+                          >Manage Maintenance List</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="">
+                    <a class="no-sub" href="External-Maintenance.html">
+                      External Maintenance</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
