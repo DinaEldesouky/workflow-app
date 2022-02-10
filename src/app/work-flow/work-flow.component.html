@@ -28,8 +28,8 @@
       title="Add Breakdown"
       data-original-title="Add Breakdown"
     >
-    <span *ngIf="!isOpened" class="fas fa-plus-circle"></span>
-    <span *ngIf="isOpened" class="fas fa-minus-circle"></span>
+      <span *ngIf="!isOpened" class="fas fa-plus-circle"></span>
+      <span *ngIf="isOpened" class="fas fa-minus-circle"></span>
 
       <!-- <span
         *ngIf="!isSaved"
@@ -79,39 +79,37 @@
                 *ngFor="let w of workFlow"
                 [attr.id]="w.approvStpWorkflowTypesPK.workflowTypeId"
               >
-                <!-- <td class="dnone">21</td> -->
-                <td class="row-inline-editable">
-                  <span >{{ w.workflowTypeCode }}</span
-                  >
+                <td>
+                  <span> {{ w.workflowTypeCode }}</span>
                   <input
-                    
-                    class="form-control"
+                    *ngIf="
+                      w.approvStpWorkflowTypesPK.workflowTypeId == editIndex &&
+                      isEdit
+                    "
                     type="text"
-                    value="{{ w.workflowTypeCode }}"
-                    placeholder="0bb"
                   />
                 </td>
-                <td class="row-inline-editable">
-                  <span >{{ w.latinName }}</span
-                  >
+                <td>
+                  <span>{{ w.latinName }}</span>
                   <input
-                    class="form-control"
+                    *ngIf="
+                      editIndex == w.approvStpWorkflowTypesPK.workflowTypeId &&
+                      isEdit
+                    "
                     type="text"
-                    value="{{ w.latinName }}"
-                    placeholder="0bb"
                   />
                 </td>
-                <td class="row-inline-editable">
-                  <span >{{ w.arabicName }}</span
-                  >
+                <td>
+                  <span>{{ w.arabicName }}</span>
                   <input
-                    class="form-control"
+                    *ngIf="
+                      editIndex == w.approvStpWorkflowTypesPK.workflowTypeId &&
+                      isEdit
+                    "
                     type="text"
-                    value="{{ w.arabicName }}"
-                    placeholder="0bb"
                   />
                 </td>
-                <td class="details-control center">
+                <td  class="details-control center">
                   <a href="#" class="square-icon show-child"
                     ><i class="fa fa-ellipsis-h"></i
                   ></a>
@@ -122,8 +120,21 @@
                 </td>
                 <td class="center">
                   <a
-                    class="row-inline-edit glyphicon glyphicon-inline glyphicon-pencil"
+                    *ngIf="
+                      editIndex != w.approvStpWorkflowTypesPK.workflowTypeId &&
+                      !isEdit
+                    "
+                    class="glyphicon glyphicon-inline glyphicon-pencil"
                     (click)="edit(w.approvStpWorkflowTypesPK)"
+                  ></a>
+                  <a
+                    *ngIf="
+                      editIndex == w.approvStpWorkflowTypesPK.workflowTypeId &&
+                      isEdit
+                    "
+                    class="glyphicon glyphicon-inline glyphicon-floppy-disk"
+                    href="#"
+                    (click)="save()"
                   ></a>
                   <a (click)="onRemoveRow(w.approvStpWorkflowTypesPK)">
                     <i class="glyphicon glyphicon-trash"></i
@@ -131,12 +142,12 @@
                 </td>
               </tr>
 
-              <tr
+              <!-- <tr
                 class="new-row active"
                 role="row"
                 *ngIf="isOpened && !isSaved && !isEdit"
               >
-                <!-- <td class="dnone">21</td> -->
+               
                 <td>
                   <input
                     class="form-control"
@@ -179,13 +190,9 @@
                     href="#"
                     (click)="save()"
                   ></a>
-                  <!-- <a
-                 
-                    href="#"
-                    class=" glyphicon-inline glyphicon glyphicon-trash"
-                  ></a> -->
+                  
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>

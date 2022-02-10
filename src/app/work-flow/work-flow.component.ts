@@ -21,7 +21,7 @@ export class WorkFlowComponent implements OnInit {
   title = '';
   isEdit: boolean = false;
   length: number = 0;
-
+  editIndex:number=0;
   constructor(private wfService: WorkFlowService) {}
 
   ngOnInit(): void {
@@ -76,9 +76,11 @@ export class WorkFlowComponent implements OnInit {
     console.log(this.workFlow);
   }
 
-  edit(id: any) {
+  edit( id: any) {
     this.isEdit=true;
-    console.log(id);
+    this.editIndex=id.workflowTypeId;
+    console.log(id.workflowTypeId);
+
     this.workFlow.push({
       approvStpWorkflowTypesPK: {
         branchId: this.branchID,
@@ -89,14 +91,14 @@ export class WorkFlowComponent implements OnInit {
       arabicName: this.val3,
       active: this.isActive,
     });
-    // this.wfService.update(id, this.workFlow).subscribe(
-    //   (response) => {
-    //     console.log(this.workFlow);
-    //   },
-    //   (err) => {
-    //     console.log(err);
-    //   }
-    // );
+    this.wfService.update(id, this.workFlow).subscribe(
+      (response) => {
+        console.log(this.workFlow);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   onRemoveRow(id: any) {

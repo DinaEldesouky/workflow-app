@@ -314,10 +314,10 @@ $(document).ready(function() {
     // }
 
     // Cell inline editing
-    $("inline-editable span").click(function(e) {
-        inlineEditing($(this).parent());
+    // $("inline-editable span").click(function(e) {
+    //     inlineEditing($(this).parent());
 
-    });
+    // });
 
     // Cell inline Editing Function Used for Row in Line editing
     function inlineEditing(element) {
